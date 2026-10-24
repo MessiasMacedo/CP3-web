@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Button from '../components/Button'
 import Field from '../components/Field'
+import SectionTitle from '../components/SectionTitle'
 import Spinner from '../components/Spinner'
 import { sendMessage } from '../services/messages'
 import { validateContact } from '../utils/validateContact'
@@ -33,7 +34,9 @@ export default function Contact() {
 
   return (
     <section className="narrow">
-      <h1>Contato</h1>
+      <SectionTitle label="Contato" as="h1">
+        Vamos conversar.
+      </SectionTitle>
       <form onSubmit={handleSubmit} noValidate>
         <Field
           label="Nome"

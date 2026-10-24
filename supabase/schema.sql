@@ -32,3 +32,9 @@ create policy "dono adiciona" on featured_projects
   for insert to authenticated with check (true);
 create policy "dono remove" on featured_projects
   for delete to authenticated using (true);
+
+-- Destaques iniciais (o nome tem que ser igual ao do repositório no GitHub).
+-- Depois, os destaques são trocados pelo dashboard.
+insert into featured_projects (repo_name) values
+  ('Projeto_ECommerce-TCC-curso'),
+  ('gerenciador-de-tarefas');

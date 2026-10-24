@@ -5,6 +5,7 @@ import ErrorState from '../components/ErrorState'
 import { ProjectCardSkeleton } from '../components/ProjectCard'
 import { useRepos } from '../hooks/useRepos'
 import { formatDate } from '../utils/formatDate'
+import { formatRepoName } from '../utils/formatRepoName'
 import NotFound from './NotFound'
 
 export default function ProjectDetail() {
@@ -20,7 +21,7 @@ export default function ProjectDetail() {
 
   return (
     <section>
-      <h1>{repo.name}</h1>
+      <h1>{formatRepoName(repo.name)}</h1>
       <Card>
         <p>{repo.description || 'Sem descrição.'}</p>
         <ul className="details">

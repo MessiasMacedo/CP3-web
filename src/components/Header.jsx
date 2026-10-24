@@ -1,3 +1,4 @@
+import { FiMoon, FiSun } from 'react-icons/fi'
 import { NavLink } from 'react-router'
 import { useTheme } from '../hooks/useTheme'
 
@@ -6,8 +7,8 @@ export default function Header() {
 
   return (
     <header className="header">
-      <NavLink to="/" className="logo">
-        SN.
+      <NavLink to="/" className="logo" aria-label="Início">
+        MM<span className="accent">.</span>
       </NavLink>
       <nav>
         <NavLink to="/projetos">Projetos</NavLink>
@@ -17,7 +18,11 @@ export default function Header() {
           onClick={toggleTheme}
           aria-label={`Mudar para tema ${theme === 'dark' ? 'claro' : 'escuro'}`}
         >
-          {theme === 'dark' ? '☀' : '☾'}
+          {theme === 'dark' ? (
+            <FiSun aria-hidden="true" />
+          ) : (
+            <FiMoon aria-hidden="true" />
+          )}
         </button>
       </nav>
     </header>
