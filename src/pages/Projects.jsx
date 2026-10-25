@@ -1,4 +1,5 @@
 import ProjectList from '../components/ProjectList'
+import SectionTitle from '../components/SectionTitle'
 import { useRepos } from '../hooks/useRepos'
 
 export default function Projects() {
@@ -6,7 +7,9 @@ export default function Projects() {
 
   return (
     <section>
-      <h1>Projetos</h1>
+      <SectionTitle label="Direto do GitHub" as="h1">
+        Projetos.
+      </SectionTitle>
       <ProjectList
         repos={data ?? []}
         isLoading={isLoading}

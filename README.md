@@ -1,6 +1,6 @@
-# Portfólio
+# Portfólio · Messias Macedo
 
-Site de portfólio pessoal em React. Os projetos são carregados automaticamente
+Portfólio de Messias Macedo, engenheiro de software com foco em back-end (Java e Spring Boot), feito em React. Os projetos são carregados automaticamente
 da API do GitHub, o formulário de contato envia e-mail e salva a mensagem, e um
 dashboard protegido por login permite responder mensagens e escolher os projetos
 em destaque.
@@ -17,6 +17,7 @@ em destaque.
 | Login e banco        | Supabase (Auth + Postgres com RLS)         |
 | E-mail do contato    | EmailJS (API REST com `fetch`)             |
 | Estilo               | CSS puro com variáveis (tema claro/escuro) |
+| Ícones e fonte       | React Icons + Archivo (auto-hospedada)     |
 | Testes               | Vitest + Testing Library                   |
 | Padrão de código     | ESLint + Prettier + Husky + lint-staged    |
 | Padrão de commits    | Conventional Commits + commitlint          |
@@ -34,6 +35,8 @@ Outros comandos: `npm test`, `npm run lint`, `npm run build`.
 
 ### Configuração dos serviços
 
+0. **GitHub:** só aparecem no site os repositórios com o tópico `portfolio`
+   (página do repositório > engrenagem ao lado de _About_ > _Topics_).
 1. **Supabase:** crie um projeto, rode `supabase/schema.sql` no SQL Editor,
    crie seu usuário em _Authentication > Users_ e **desative novos cadastros**
    em _Authentication > Sign In / Providers_ (só o dono pode logar).

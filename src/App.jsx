@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import ProtectedRoute from './components/ProtectedRoute'
 import Spinner from './components/Spinner'
@@ -37,6 +38,7 @@ export default function App() {
           </Routes>
         </Suspense>
       </main>
+      <Footer />
     </>
   )
 }
