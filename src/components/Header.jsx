@@ -7,7 +7,8 @@ export default function Header() {
 
   return (
     <header className="header">
-      <NavLink to="/" className="logo" aria-label="Início">
+      {/* O nome acessível começa pelo texto visível ("MM"), como pede o Lighthouse */}
+      <NavLink to="/" className="logo" aria-label="MM, página inicial">
         MM<span className="accent">.</span>
       </NavLink>
       <nav>

@@ -11,7 +11,7 @@ const LEVA_STATS = [
   { value: '5', label: 'áreas: vendas, peças, revisão, garantia e estoque' },
 ]
 
-// Cada foto existe em 600 px e 1200 px (public/leva). O "sizes" diz ao navegador
+// Cada foto existe em 400, 600 e 1200 px (public/leva). O "sizes" diz ao navegador
 // quanto espaço ela ocupa, e ele baixa só a versão necessária.
 const LEVA_PHOTOS = [
   {
@@ -210,7 +210,7 @@ export default function Home() {
             <img
               key={photo.name}
               src={`/leva/${photo.name}-600.webp`}
-              srcSet={`/leva/${photo.name}-600.webp 600w, /leva/${photo.name}-1200.webp 1200w`}
+              srcSet={`/leva/${photo.name}-400.webp 400w, /leva/${photo.name}-600.webp 600w, /leva/${photo.name}-1200.webp 1200w`}
               sizes={photo.sizes}
               alt={photo.alt}
               width={photo.w}
