@@ -27,7 +27,7 @@ Regras:
   `Spinner` ou `ProjectList` já resolvem.
 - Todo dado de API precisa mostrar carregando, erro e lista vazia.
 - Dados do GitHub sempre via `useRepos()` (cache do TanStack Query). Nunca chamar a API do GitHub em outro lugar.
-- Só aparecem repositórios com o tópico `portfolio` no GitHub. Não criar listas fixas de projetos no código.
+- Projetos filtrados por `selectPortfolioRepos` (`services/github.js`): só os com o tópico `portfolio`; se nenhum tiver, todos menos forks. Não criar listas fixas de projetos no código.
 - Ícones sempre do React Icons (`react-icons/fi`), com `aria-hidden="true"` quando forem decorativos.
 - Imagens em `public/` no formato WebP, com `width`/`height` e `loading="lazy"` (exceto as do topo da página).
 - Páginas pesadas ou só do dono (dashboard, login) são carregadas com `React.lazy`.

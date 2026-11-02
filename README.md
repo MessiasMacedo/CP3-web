@@ -5,7 +5,19 @@ da API do GitHub, o formulário de contato envia e-mail e salva a mensagem, e um
 dashboard protegido por login permite responder mensagens e escolher os projetos
 em destaque.
 
-**Site:** https://SEU-PROJETO.vercel.app
+**Site:** https://cp-3-web-indol.vercel.app
+
+## Acesso para avaliação
+
+Projeto feito para o CP3 (FIAP). Para ver o dashboard do dono, entre em
+[/login](https://cp-3-web-indol.vercel.app/login) com o usuário de teste:
+
+| E-mail                        | Senha      |
+| ----------------------------- | ---------- |
+| `professor@cp3portfolio.test` | `senhaCP3` |
+
+No dashboard dá para ler as mensagens do formulário de contato, marcá-las como
+respondidas e escolher os projetos em destaque na home.
 
 ## Tecnologias
 
@@ -35,8 +47,9 @@ Outros comandos: `npm test`, `npm run lint`, `npm run build`.
 
 ### Configuração dos serviços
 
-0. **GitHub:** só aparecem no site os repositórios com o tópico `portfolio`
-   (página do repositório > engrenagem ao lado de _About_ > _Topics_).
+0. **GitHub:** se algum repositório tiver o tópico `portfolio` (página do
+   repositório > engrenagem ao lado de _About_ > _Topics_), só os marcados
+   aparecem no site; se nenhum tiver, aparecem todos, menos os forks.
 1. **Supabase:** crie um projeto, rode `supabase/schema.sql` no SQL Editor,
    crie seu usuário em _Authentication > Users_ e **desative novos cadastros**
    em _Authentication > Sign In / Providers_ (só o dono pode logar).
@@ -71,7 +84,18 @@ Fluxo de dados: `página → hook → service → API`. Componentes visuais só 
 
 ## Harness de IA
 
+Ferramenta: Claude Code com o modelo Claude Opus 5.5.
+
+No repositório:
+
 - `CLAUDE.md`: instruções do projeto (arquitetura, nomes, commits, branches)
+- `.mcp.json`: conexão somente leitura com o Supabase
+
+Mantidos só na máquina local (a pasta `.claude` fica fora do repositório):
+
 - `.claude/skills/nova-feature`: passo a passo de branch → código → testes → PR
 - `.claude/agents/revisor.md`: agente que revisa o diff contra os padrões
-- `.mcp.json`: conexão somente leitura com o Supabase
+
+Os padrões são garantidos por automação, e não só pelas instruções: Husky +
+lint-staged (ESLint e Prettier) e commitlint rodam antes de cada commit, e os
+testes do Vitest cobrem a validação do formulário e o bloqueio do dashboard.
